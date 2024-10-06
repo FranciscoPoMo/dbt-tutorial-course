@@ -8,8 +8,10 @@ models:
         description: "Item order unique identifier."
         data_type: INTEGER
         tests:
-          - not_null
-          - unique
+          - unique:
+              severity: error
+        constraints:
+          - type: not_null
 
       - name: order_id
         description: "Order ID."
